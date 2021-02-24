@@ -12,3 +12,9 @@
 # After install flask
 
     pip install Flask
+
+
+## To get hot reloading run these in the cli
+    set FLASK_ENV=development
+    set FLASK_APP=app
+    flask run
