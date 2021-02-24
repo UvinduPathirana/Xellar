@@ -36,5 +36,5 @@ def cart():
     return render_template('shopping-cart.html')
 
 @app.route('/shop')
-def cart():
+def shop():
     return render_template('shop.html')
