@@ -25,13 +25,13 @@
 </head>
 
 <body>
+    {% block head %}
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
     <!-- Header Section Begin -->
-    {% block body %}
     <header class="header-section">
         <div class="header-top">
             <div class="container">
@@ -125,9 +125,8 @@
             </div>
         </div>
     </header>
-    {% endblock %}
     <!-- Header End -->
-
+    {% endblock %}
     <!-- Hero Section Begin -->
     <section class="hero-section">
         <div class="hero-items owl-carousel">
