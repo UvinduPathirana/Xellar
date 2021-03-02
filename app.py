@@ -39,4 +39,7 @@ def cart():
 def shop():
     return render_template('shop.html')
 
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
 
