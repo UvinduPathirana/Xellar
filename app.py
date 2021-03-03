@@ -7,11 +7,11 @@ from markupsafe import escape
 app = Flask(__name__,  static_url_path='',
                     static_folder='static', template_folder='templates')
                     
-# local
-# application.config['MYSQL_HOST'] = 'localhost'
-# application.config['MYSQL_USER'] = 'root'
-# application.config['MYSQL_PASSWORD'] = 'Uv1ndu2006'
-# application.config['MYSQL_DB'] = 'home_delivary'
+local
+application.config['MYSQL_HOST'] = 'localhost'
+application.config['MYSQL_USER'] = 'root'
+application.config['MYSQL_PASSWORD'] = 'Uv1ndu2006'
+application.config['MYSQL_DB'] = 'mortorhub'
 
 # production
 # application.config['MYSQL_HOST'] = 'database-1.c5qdsuoy5mft.ap-south-1.rds.amazonaws.com'
@@ -21,6 +21,10 @@ app = Flask(__name__,  static_url_path='',
 
 @app.route('/')
 def hello_world():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM cars")
+    locations = cur.fetchall()
+    cur.close()
     return render_template('index.html')
 
 @app.route('/login')
