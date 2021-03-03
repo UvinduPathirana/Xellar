@@ -3,15 +3,14 @@ from flask import render_template
 from flask_mysqldb import MySQL
 from markupsafe import escape
 
-
 app = Flask(__name__,  static_url_path='',
                     static_folder='static', template_folder='templates')
                     
-local
-application.config['MYSQL_HOST'] = 'localhost'
-application.config['MYSQL_USER'] = 'root'
-application.config['MYSQL_PASSWORD'] = 'Uv1ndu2006'
-application.config['MYSQL_DB'] = 'mortorhub'
+# local
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'Uv1ndu2006'
+app.config['MYSQL_DB'] = 'mortorhub'
 
 # production
 # application.config['MYSQL_HOST'] = 'database-1.c5qdsuoy5mft.ap-south-1.rds.amazonaws.com'
@@ -22,7 +21,7 @@ application.config['MYSQL_DB'] = 'mortorhub'
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM categories")
+    cur.execute("SELECT * FROM mortorhub.categories;")
     categories = cur.fetchall()
     cur.close()
     return render_template('index.html', categories=categories)
