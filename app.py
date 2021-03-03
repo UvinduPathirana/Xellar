@@ -18,6 +18,10 @@ app.config['MYSQL_DB'] = 'mortorhub'
 # application.config['MYSQL_PASSWORD'] = ''
 # application.config['MYSQL_DB'] = 'home_delivary'
 
+
+mysql = MySQL(app)
+
+
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
     cur = mysql.connection.cursor()

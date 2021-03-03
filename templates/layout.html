@@ -85,13 +85,13 @@
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
                         <span>TYPES OF CARS</span>
+                        <ul class="depart-hover">
                         {% if categories %}
                         {% for categories in categories %}
-                        <ul class="depart-hover">
                             <li class="active"><a href="http://127.0.0.1:5000/login">{{ categories[1] }}</a></li>
-                        </ul>
                         {% endfor %}
-                        {%end if%}
+                        {%endif%}
+                        </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
