@@ -27,8 +27,10 @@ def hello_world():
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM mortorhub.categories;")
     categories = cur.fetchall()
+    cur.execute("SELECT * FROM mortorhub.cars;")
+    cars = cur.fetchall()
     cur.close()
-    return render_template('index.html', categories=categories)
+    return render_template('index.html', categories=categories, cars=cars)
 
 @app.route('/login')
 def login():
