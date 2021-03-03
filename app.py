@@ -19,13 +19,13 @@ application.config['MYSQL_DB'] = 'mortorhub'
 # application.config['MYSQL_PASSWORD'] = ''
 # application.config['MYSQL_DB'] = 'home_delivary'
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM cars")
-    locations = cur.fetchall()
+    cur.execute("SELECT * FROM categories")
+    categories = cur.fetchall()
     cur.close()
-    return render_template('index.html')
+    return render_template('index.html', categories=categories)
 
 @app.route('/login')
 def login():
