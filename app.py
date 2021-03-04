@@ -34,11 +34,13 @@ def hello_world():
     cur.execute("SELECT * FROM cars WHERE cars.range = 2;")
     midrange = cur.fetchall()
     cur.execute("SELECT * FROM cars WHERE cars.range = 3;")
-    category = cur.fetchall()
-    cur.execute("SELECT * FROM cars WHERE cars.range = 4;")
     highend = cur.fetchall()
+    cur.execute("SELECT * FROM cars WHERE cars.range = 4;")
+    category = cur.fetchall()
+    cur.execute("SELECT * FROM cars WHERE cars.range = 5;")
+    insta = cur.fetchall()
     cur.close()
-    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend, category=category)
+    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend, category=category, insta=insta)
 
 @app.route('/login')
 def login():
