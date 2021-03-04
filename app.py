@@ -31,6 +31,10 @@ def hello_world():
     cars = cur.fetchall()
     cur.execute("SELECT * FROM cars WHERE cars.range = 1;")
     lowbudget = cur.fetchall()
+    cur.execute("SELECT * FROM cars WHERE cars.range = 2;")
+    midrange = cur.fetchall()
+    cur.execute("SELECT * FROM cars WHERE cars.range = 3;")
+    highend = cur.fetchall()
     cur.close()
     return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget)
 
