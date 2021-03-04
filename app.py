@@ -36,7 +36,7 @@ def hello_world():
     cur.execute("SELECT * FROM cars WHERE cars.range = 3;")
     highend = cur.fetchall()
     cur.close()
-    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget)
+    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend)
 
 @app.route('/login')
 def login():
