@@ -168,13 +168,13 @@
     <div class="banner-section spad">
         <div class="container-fluid">
             <div class="row">
-                {% if cars %}
-                {% for cars in cars %}
+                {% if category %}
+                {% for category in category %}
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/{{ cars[3] }}" alt="">
+                        <img src="img/{{ category[3] }}" alt="">
                         <div class="inner-text">
-                            <h4>{{ cars[1] }}</h4>
+                            <h4>{{ category[1] }}</h4>
                         </div>
                     </div>
                 </div>
@@ -247,15 +247,15 @@
                 <div class="col-lg-8 offset-lg-1">
                     <div class="filter-control">
                         <ul>
-                            <li class="active">Low Budget</li>
+                            <li class="active">Midrange</li>
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
-                        {% if lowbudget %}
-                        {% for lowbudget in lowbudget %}
+                        {% if midrange %}
+                        {% for midrange in midrange %}
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/{{ lowbudget[3] }}" alt="">
+                                <img src="img/{{ midrange[3] }}" alt="">
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -268,7 +268,7 @@
                             <div class="pi-text">
                                 <div class="catagory-name">Low Range Cars</div>
                                 <a href="#">
-                                    <h5>{{ lowbudget[1] }}</h5>
+                                    <h5>{{ midrange[1] }}</h5>
                                 </a>
                                 <div class="product-price">
                                     $13.00
@@ -295,15 +295,15 @@
                 <div class="col-lg-8 offset-lg-1">
                     <div class="filter-control">
                         <ul>
-                            <li class="active">Low Budget</li>
+                            <li class="active">Highend</li>
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
-                        {% if lowbudget %}
-                        {% for lowbudget in lowbudget %}
+                        {% if highend %}
+                        {% for highend in highend %}
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/{{ lowbudget[3] }}" alt="">
+                                <img src="img/{{ highend[3] }}" alt="">
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -316,7 +316,7 @@
                             <div class="pi-text">
                                 <div class="catagory-name">Low Range Cars</div>
                                 <a href="#">
-                                    <h5>{{ lowbudget[1] }}</h5>
+                                    <h5>{{ highend[1] }}</h5>
                                 </a>
                                 <div class="product-price">
                                     $13.00
