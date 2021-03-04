@@ -203,10 +203,11 @@
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
+                        {% if lowbudget %}
+                        {% for lowbudget in lowbudget %}
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/products/marutilow.jpg" alt="">
-                                <div class="sale">Low Range Cars</div>
+                                <img src="img/{{ lowbudget[3] }}" alt="">
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -219,80 +220,15 @@
                             <div class="pi-text">
                                 <div class="catagory-name">Low Range Cars</div>
                                 <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $14.00
-                                    <span>$35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/hundailow.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Low Range Cars</div>
-                                <a href="#">
-                                    <h5>Suzuki Santro</h5>
+                                    <h5>{{ lowbudget[1] }}</h5>
                                 </a>
                                 <div class="product-price">
                                     $13.00
                                 </div>
                             </div>
                         </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/toyotalow.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Low Range Cars</div>
-                                <a href="#">
-                                    <h5>Toyota Vivo</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/alto.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Low Range Cars</div>
-                                <a href="#">
-                                    <h5>Suzuki Alto</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

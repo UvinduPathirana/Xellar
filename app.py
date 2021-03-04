@@ -29,8 +29,10 @@ def hello_world():
     categories = cur.fetchall()
     cur.execute("SELECT * FROM mortorhub.cars;")
     cars = cur.fetchall()
+    cur.execute("SELECT * FROM cars WHERE cars.range = 1;")
+    lowbudget = cur.fetchall()
     cur.close()
-    return render_template('index.html', categories=categories, cars=cars)
+    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget)
 
 @app.route('/login')
 def login():
