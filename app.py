@@ -39,8 +39,10 @@ def hello_world():
     category = cur.fetchall()
     cur.execute("SELECT * FROM cars WHERE cars.range = 5;")
     insta = cur.fetchall()
+    cur.execute("SELECT * FROM cars WHERE cars.range = 6;")
+    indexpic = cur.fetchall()
     cur.close()
-    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend, category=category, insta=insta)
+    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend, category=category, insta=insta, indexpic=indexpic)
 
 @app.route('/login')
 def login():
