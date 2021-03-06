@@ -321,9 +321,10 @@
     <!-- Women Banner Section End -->
 
     <!-- Deal Of The Week Section Begin-->
-    <section class="deal-of-week set-bg spad" data-setbg="img/deal.jpg">
+    {% if deal %}
+    {% for deal in deal %}
+    <section class="deal-of-week set-bg spad" data-setbg="img/{{ deal[3] }}">
         <div class="container">
-            {% if deal %}
             <div class="col-lg-6 text-center">
                 <div class="section-title">
                     <h2>{{ deal[1] }}</h2>
@@ -354,9 +355,10 @@
                 </div>
                 <a href="#" class="primary-btn">Shop Now</a>
             </div>
-            {% endif %}
         </div>
     </section>
+    {% endfor %}
+    {% endif %}
     <!-- Deal Of The Week Section End -->
 
     <!-- Instagram Section Begin -->
