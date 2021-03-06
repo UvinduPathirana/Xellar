@@ -1,5 +1,6 @@
 {% extends "shop.html" %}
-
+{% if catetype %}
+{% for catetype in catetype %}
 <div class="col-lg-9 order-1 order-lg-2">
     <div class="product-show-option">
         <div class="row">
@@ -256,3 +257,5 @@
         </a>
     </div>
 </div>
+{% endfor %}
+{% endif %}
