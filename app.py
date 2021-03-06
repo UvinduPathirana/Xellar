@@ -44,7 +44,7 @@ def hello_world():
     cur.execute("SELECT * FROM cars WHERE cars.carid = 138;")
     deal = cur.fetchall()
     cur.close()
-    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend, category=category, insta=insta, indexpic=indexpic)
+    return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend, category=category, insta=insta, indexpic=indexpic, deal=deal)
 
 @app.route('/login')
 def login():
