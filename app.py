@@ -80,3 +80,7 @@ def categories(id):
     cur.connection.commit()
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
+
+@app.route('/shopproduct')
+def cate1():
+    return render_template('shop-product.html')
