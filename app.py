@@ -75,7 +75,7 @@ def categories(id):
     cur.execute("SELECT * FROM categories")
     categories = cur.fetchall()
     cur.execute(
-        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid) WHERE categories.categoryid =" + 30)
+        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid) WHERE categories.categoryid =" + id)
     catetype = cur.fetchall()
     cur.connection.commit()
     cur.close()
