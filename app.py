@@ -67,7 +67,7 @@ def blog():
     return render_template('blog.html')
 
 
-@app.route('/type/<id>',  methods=['GET', 'POST'])
+@app.route('/cate/<id>',  methods=['GET', 'POST'])
 def categories(id):
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM cars")
@@ -79,4 +79,4 @@ def categories(id):
     catetype = cur.fetchall()
     cur.connection.commit()
     cur.close()
-    return render_template('index.html', cars=cars, categories=categories, catetype=catetype)
+    return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
