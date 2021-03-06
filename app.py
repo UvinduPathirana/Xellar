@@ -42,7 +42,7 @@ def hello_world():
     cur.execute("SELECT * FROM cars WHERE cars.range = 6;")
     indexpic = cur.fetchall()
     cur.execute("SELECT * FROM cars WHERE cars.carid = 138;")
-    indexpic = cur.fetchall()
+    deal = cur.fetchall()
     cur.close()
     return render_template('index.html', categories=categories, cars=cars, lowbudget=lowbudget, midrange=midrange, highend=highend, category=category, insta=insta, indexpic=indexpic)
 
