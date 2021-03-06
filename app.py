@@ -81,6 +81,17 @@ def categories(id):
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
 
-@app.route('/shopproduct')
-def cate1():
-    return render_template('shop-product.html')
+@app.route('/shopproduct/<id>' ,  methods=['GET', 'POST'])
+def cate1(id):
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM cars")
+    cars = cur.fetchall()
+    cur.execute("SELECT * FROM categories")
+    categories = cur.fetchall()
+    cur.execute(
+        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid) WHERE categories.categoryid =" + id)
+    catetype = cur.fetchall()
+    cur.connection.commit()
+    cur.close()
+    return render_template('shop-product.html', cars=cars, categories=categories, catetype=catetype)
+    
