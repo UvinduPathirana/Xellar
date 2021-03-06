@@ -81,7 +81,7 @@ def categories(id):
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
 
-@app.route('/shopproduct/<id>' ,  methods=['GET', 'POST'])
+@app.route('/<id>' ,  methods=['GET', 'POST'])
 def cate1(id):
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM cars")
