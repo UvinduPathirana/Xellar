@@ -66,3 +66,17 @@ def shop():
 def blog():
     return render_template('blog.html')
 
+
+@app.route('/type/<id>',  methods=['GET', 'POST'])
+def categories(id):
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM cars")
+    cars = cur.fetchall()
+    cur.execute("SELECT * FROM categories")
+    categories = cur.fetchall()
+    cur.execute(
+        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid) WHERE categories.categoryid =" + 30)
+    catetype = cur.fetchall()
+    cur.connection.commit()
+    cur.close()
+    return render_template('index.html', cars=cars, categories=categories, catetype=catetype)
