@@ -93,5 +93,5 @@ def cate1(id):
     catetype = cur.fetchall()
     cur.connection.commit()
     cur.close()
-    return render_template('shop-product.html', cars=cars, categories=categories, catetype=catetype)
+    return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
     
