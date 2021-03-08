@@ -94,4 +94,3 @@ def cate1(id):
     cur.connection.commit()
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
-    
