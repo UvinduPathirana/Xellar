@@ -19,3 +19,4 @@
     set FLASK_APP=app
     flask run
 
+## now the app should work
