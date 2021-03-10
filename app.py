@@ -66,97 +66,16 @@ def cate1(id):
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
 
-@app.route('/range/<id>' ,  methods=['GET', 'POST'])
-def cate2(id):
+@app.route('/<range>' ,  methods=['GET', 'POST'])
+def range(range):
     cur = cnxn.cursor()
     cur.execute("SELECT * FROM cars;")
     cars = cur.fetchall()
     cur.execute("SELECT * FROM categories")
     categories = cur.fetchall()
     cur.execute(
-        "SELECT * from cars WHERE cars.range = " + id)
+        "SELECT * from cars WHERE cars.range = " + range)
     ranges = cur.fetchall()
     cur.connection.commit()
     cur.close()
-    return render_template('range-shop.html', cars=cars, categories=categories, ranges=ranges)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# @app.route('/login')
-# def login():
-#     cur = cnxn.cursor()
-#     cursor.execute('SELECT * FROM database_name.table')
-#     return render_template('login.html')
-
-# @app.route('/main')
-# def main():
-#     return render_template('main.html')
-
-# @app.route('/shopping-cart')
-# def cart():
-#     return render_template('shopping-cart.html')
-
-# @app.route('/shop')
-# def shop():
-#     return render_template('shop.html')
-
-# @app.route('/blog')
-# def blog():
-#     return render_template('blog.html')
-
-
-# @app.route('/cate/<id>',  methods=['GET', 'POST'])
-# def categories(id):
-#     cur = cnxn.cursor()
-#     cur.execute("SELECT * FROM cars")
-#     cars = cur.fetchone()
-#     cur.execute("SELECT * FROM categories")
-#     categories = cur.fetchone()
-#     cur.execute(
-#         "SELECT * from categories join cars on (categories.categoryid = cars.categoryid) WHERE categories.categoryid =" + id)
-#     catetype = cur.fetchone()
-#     cur.connection.commit()
-#     cur.close()
-#     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
-
-
+    return render_template('range.html', cars=cars, categories=categories, ranges=ranges)
