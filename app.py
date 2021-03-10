@@ -66,6 +66,19 @@ def cate1(id):
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
 
+@app.route('/range/<id>' ,  methods=['GET', 'POST'])
+def cate2(id):
+    cur = cnxn.cursor()
+    cur.execute("SELECT * FROM cars;")
+    cars = cur.fetchall()
+    cur.execute("SELECT * FROM categories")
+    categories = cur.fetchall()
+    cur.execute(
+        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid)  WHERE categories.categoryid = " + id)
+    catetype = cur.fetchall()
+    cur.connection.commit()
+    cur.close()
+    return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
 
 # @app.route('/login')
 # def login():
