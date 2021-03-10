@@ -88,7 +88,7 @@
                         <ul class="depart-hover">
                         {% if categories %}
                         {% for categories in categories %}
-                            <li class="active"><a href="http://127.0.0.1:5000/login">{{ categories[1] }}</a></li>
+                            <li class="active"><a href="http://127.0.0.1:5000/{{ categories[0] }}">{{ categories[1] }}</a></li>
                         {% endfor %}
                         {%endif%}
                         </ul>
@@ -98,9 +98,9 @@
                     <ul>
                         <li class="active"><a href="./index.html">Home</a></li>
                         <li><a href="./shop.html">Shop</a></li>
-                        <li><a href="#">Collection</a>
+                        <li><a href="#">Range</a>
                             <ul class="dropdown">
-                                <li><a href="#">Low Range</a></li>
+                                <li><a href="./shop.html">Shop</a></li>
                                 <li><a href="#">Mid Range</a></li>
                                 <li><a href="#">High Range</a></li>
                             </ul>

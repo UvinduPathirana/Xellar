@@ -56,12 +56,12 @@ def hello_world():
 def cate1(id):
     cur = cnxn.cursor()
     cur.execute("SELECT * FROM cars;")
-    cars = cur.fetchone()
+    cars = cur.fetchall()
     cur.execute("SELECT * FROM categories")
-    categories = cur.fetchone()
+    categories = cur.fetchall()
     cur.execute(
-        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid) WHERE categories.categoryid =" + id)
-    catetype = cur.fetchone()
+        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid)  WHERE categories.categoryid = " + id)
+    catetype = cur.fetchall()
     cur.connection.commit()
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
