@@ -48,7 +48,7 @@ def cate1(id):
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
 
-@app.route('/<range>' ,  methods=['GET', 'POST'])
+@app.route('/range/<range>' ,  methods=['GET', 'POST'])
 def range(range):
     cur = cnxn.cursor()
     cur.execute("SELECT * FROM cars;")
