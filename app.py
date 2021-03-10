@@ -78,7 +78,49 @@ def cate2(id):
     ranges = cur.fetchall()
     cur.connection.commit()
     cur.close()
-    return render_template('shop.html', cars=cars, categories=categories, catetype=catetype, ranges=ranges)
+    return render_template('range-shop.html', cars=cars, categories=categories, ranges=ranges)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # @app.route('/login')
 # def login():

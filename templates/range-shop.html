@@ -351,12 +351,12 @@
                     </div>
                     <div class="product-list">
                         <div class="row">
-                            {% if catetype %}
-                            {% for catetype in catetype %}
+                            {% if ranges %}
+                            {% for ranges in ranges %}
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-item">
                                     <div class="pi-pic">
-                                        <img src="img/{{ catetype[5] }}" alt="">
+                                        <img src="/static/img/{{ ranges[4] }}" alt="">
                                         <div class="sale pp-sale">Sale</div>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>
@@ -368,9 +368,9 @@
                                         </ul>
                                     </div>
                                     <div class="pi-text">
-                                        <div class="catagory-name">{{ catetype[1] }}</div>
+                                        <!-- <div class="catagory-name">{{ range[1] }}</div> -->
                                         <a href="#">
-                                            <h5>{{ catetype[3] }}</h5>
+                                            <h5>{{ ranges[1] }}</h5>
                                         </a>
                                         <div class="product-price">
                                             $14.00
