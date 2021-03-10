@@ -3,29 +3,11 @@ from flask import render_template
 from markupsafe import escape
 import pyodbc 
 
-
-# conn = pyodbc.connect('Driver={SQL Server};'
-#                       'Server=server_name;'
-#                       'Database=database_name;'
-#                       'Trusted_Connection=yes;')
-
 cnxn = pyodbc.connect(r'Driver=SQL Server;Server=DESKTOP-R8VD1QD\SQLEXPRESS;Database=mortorhub;Trusted_Connection=yes;')
 
 
 app = Flask(__name__,  static_url_path='',
                     static_folder='static', template_folder='templates')
-                    
-# local
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = 'Uv1ndu2006'
-# app.config['MYSQL_DB'] = 'mortorhub'
-
-# production
-# application.config['MYSQL_HOST'] = 'database-1.c5qdsuoy5mft.ap-south-1.rds.amazonaws.com'
-# application.config['MYSQL_USER'] = 'admin'
-# application.config['MYSQL_PASSWORD'] = ''
-# application.config['MYSQL_DB'] = 'home_delivary'
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
