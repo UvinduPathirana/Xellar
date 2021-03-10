@@ -74,11 +74,11 @@ def cate2(id):
     cur.execute("SELECT * FROM categories")
     categories = cur.fetchall()
     cur.execute(
-        "SELECT * from categories join cars on (categories.categoryid = cars.categoryid)  WHERE categories.categoryid = " + id)
-    catetype = cur.fetchall()
+        "SELECT * from cars WHERE cars.range = " + id)
+    ranges = cur.fetchall()
     cur.connection.commit()
     cur.close()
-    return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
+    return render_template('shop.html', cars=cars, categories=categories, catetype=catetype, ranges=ranges)
 
 # @app.route('/login')
 # def login():
