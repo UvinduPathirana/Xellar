@@ -48,15 +48,15 @@ def cate1(id):
     cur.close()
     return render_template('shop.html', cars=cars, categories=categories, catetype=catetype)
 
-@app.route('/range/<range>' ,  methods=['GET', 'POST'])
-def range(range):
+@app.route('/lowrange' ,  methods=['GET', 'POST'])
+def range():
     cur = cnxn.cursor()
     cur.execute("SELECT * FROM cars;")
     cars = cur.fetchall()
     cur.execute("SELECT * FROM categories")
     categories = cur.fetchall()
     cur.execute(
-        "SELECT * from cars WHERE cars.range = " + range)
+        "SELECT * from cars WHERE cars.range = " + "1")
     ranges = cur.fetchall()
     cur.connection.commit()
     cur.close()
